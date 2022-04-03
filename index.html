@@ -1213,13 +1213,10 @@
     </footer>
     <!-- END FOOTER -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <!-- Wow -->
-    <script src="./lib/wowjs/wow.min.js"></script>
-    <script>
-      new WOW().init();
-    </script>
+    <!-- BACK TO TOP -->
+    <a class="back-to-top cd-top text-replace js-cd-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -1238,5 +1235,35 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Wow -->
+    <script src="./lib/wowjs/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+
+    <!-- BACK TO TOP -->
+    <script>
+      $(document).ready(function () {
+        //Check to see if the window is top if not then display button
+        $(window).scroll(function () {
+          // Show button after 100px
+          var showAfter = 100;
+          if ($(this).scrollTop() > showAfter) {
+            $(".back-to-top").fadeIn();
+          } else {
+            $(".back-to-top").fadeOut();
+          }
+        });
+
+        //Click event to scroll to top
+        $(".back-to-top").click(function () {
+          $("html, body").animate({ scrollTop: 0 }, 800);
+          return false;
+        });
+      });
+    </script>
   </body>
 </html>
